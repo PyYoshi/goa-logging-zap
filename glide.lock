@@ -1,0 +1,28 @@
+hash: 125d4e00f5da1f839d4202f6b459be9285300580b35f88d4808e3e95f424d522
+updated: 2016-08-17T23:55:46.409357923+09:00
+imports:
+- name: github.com/armon/go-metrics
+  version: 3df31a1ada83e310c2e24b267c8e8b68836547b4
+- name: github.com/dimfeld/httppath
+  version: c8e499c3ef3c3e272ed8bdcc1ccf39f73c88debc
+- name: github.com/dimfeld/httptreemux
+  version: 2b442cd17d33755a60a283b7e133ea51a94994a4
+- name: github.com/goadesign/goa
+  version: ab3c7a17b736722ca9200b9536f5dcb1efcec9f6
+  subpackages:
+  - uuid
+- name: github.com/onsi/ginkgo
+  version: 462326b1628e124b23f42e87a8f2750e3c4e2d24
+- name: github.com/onsi/gomega
+  version: a78ae492d53aad5a7a232d0d0462c14c400e3ee7
+- name: github.com/satori/go.uuid
+  version: 0aa62d5ddceb50dbcb909d790b5345affd3669b6
+- name: github.com/uber-go/atomic
+  version: 0c9e689d64f004564b79d9a663634756df322902
+- name: github.com/uber-go/zap
+  version: d11d2851fcabcf03421c4dbdbc3146fc74eb1035
+- name: golang.org/x/net
+  version: 07b51741c1d6423d4a6abab1c49940ec09cb1aaf
+  subpackages:
+  - context
+testImports: []
