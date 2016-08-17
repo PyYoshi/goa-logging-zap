@@ -1,0 +1,13 @@
+language: go
+sudo: false
+go:
+  - 1.6
+  - 1.7
+  - tip
+cache:
+  directories:
+    - vendor
+install:
+  - make deps
+script:
+  - make test
