@@ -4,11 +4,14 @@ import (
 	"bytes"
 	"strings"
 
+	"encoding/json"
+
 	"github.com/PyYoshi/goa-logging-zap"
 	"github.com/goadesign/goa"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
-	"github.com/uber-go/zap"
+	"go.uber.org/zap"
+	"go.uber.org/zap/zapcore"
 )
 
 type testBuffer struct {
@@ -29,24 +32,66 @@ func (b *testBuffer) Stripped() string {
 }
 
 var _ = Describe("goa", func() {
-	var logger zap.Logger
+	var logger *zap.Logger
 	var adapter goa.LogAdapter
 
 	buf := &testBuffer{}
-	// errBuf := &testBuffer{}
+	errBuf := &testBuffer{}
+
+	type msgJson struct {
+		Level string `json:"level"`
+		Msg   string `json:"msg"`
+		Hoge  string `json:"hoge"`
+	}
 
 	BeforeEach(func() {
+		zapEncConfig := zapcore.EncoderConfig{
+			TimeKey:        "ts",
+			LevelKey:       "level",
+			NameKey:        "logger",
+			CallerKey:      "caller",
+			MessageKey:     "msg",
+			StacktraceKey:  "stacktrace",
+			EncodeLevel:    zapcore.LowercaseLevelEncoder,
+			EncodeTime:     zapcore.EpochTimeEncoder,
+			EncodeDuration: zapcore.SecondsDurationEncoder,
+		}
+		zapEnc := zapcore.NewJSONEncoder(zapEncConfig)
 		logger = zap.New(
-			zap.NewJSONEncoder(zap.NoTime()),
-			zap.Output(buf),
-			// zap.ErrorOutput(errBuf),
+			zapcore.NewCore(zapEnc, buf, zap.DebugLevel),
+			zap.ErrorOutput(errBuf),
 		)
+
 		adapter = goazap.New(logger)
 	})
 
 	It("adapts info messages", func() {
-		msg := "msg"
-		adapter.Info(msg, "hoge", "fuga")
-		Ω(buf.Stripped()).Should(Equal(`{"level":"info","msg":"msg","hoge":"fuga"}`))
+		adapter.Info("msg", "hoge", "fuga")
+		var v msgJson
+		err := json.Unmarshal(buf.Bytes(), &v)
+		if err != nil {
+			panic(err)
+		}
+		vb, err := json.Marshal(&v)
+		if err != nil {
+			panic(err)
+		}
+		Ω(string(vb)).Should(Equal(`{"level":"info","msg":"msg","hoge":"fuga"}`))
+		buf.Reset()
+	})
+
+	It("adapts error messages", func() {
+		adapter.Error("msg", "hoge", "fuga")
+		var v msgJson
+		err := json.Unmarshal([]byte(buf.Stripped()), &v)
+		if err != nil {
+			panic(err)
+		}
+		vb, err := json.Marshal(&v)
+		if err != nil {
+			panic(err)
+		}
+		Ω(string(vb)).Should(Equal(`{"level":"error","msg":"msg","hoge":"fuga"}`))
+		buf.Reset()
 	})
 })

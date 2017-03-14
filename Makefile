@@ -5,6 +5,10 @@ all: test
 deps: glide
 	./glide install
 
+.PHONY: update-deps
+update-deps:
+	bash -c "glide update --all-dependencies --strip-vendor --resolve-current"
+
 .PHONY: glide
 glide:
 ifeq ($(shell uname),Darwin)
