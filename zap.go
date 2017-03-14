@@ -2,9 +2,8 @@
 Package goazap contains an adapter that makes it possible to configure goa so it uses zap
 as logger backend.
 Usage:
-    logger := zap.New(
-		zap.NewJSONEncoder(),
-	)
+    logger, err := zap.NewProduction()
+	...
     // Initialize logger handler using zap package
     service.WithLogger(goazap.New(logger))
     // ... Proceed with configuring and starting the goa service
