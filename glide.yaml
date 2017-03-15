@@ -10,4 +10,4 @@ import:
 - package: github.com/onsi/gomega
   version: ^1.0.0
 - package: go.uber.org/zap
-  version: ^1.0.0-rc.3
+  version: ^1.0.0

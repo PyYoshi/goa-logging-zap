@@ -1,5 +1,5 @@
-hash: f7258b9538679f65d370e855c7d60a70659310688f0fe80b7b25ca1425966626
-updated: 2017-03-14T18:46:03.064198028+09:00
+hash: f069734fd807e197b2a6b8f3dedec30ac2eecd0452f9cd8ca5a9c79f3e319568
+updated: 2017-03-15T14:30:55.656353669+09:00
 imports:
 - name: github.com/ajg/form
   version: 523a5da1a92f01b01f840b61689c0340a0243532
@@ -147,11 +147,11 @@ imports:
 - name: github.com/pelletier/go-buffruneio
   version: c37440a7cf42ac63b919c752ca73a85067e05992
 - name: github.com/pelletier/go-toml
-  version: 3b00596b2e9ee541bbd72dc50cc0c60e2b46c69c
+  version: fee7787d3f811af92276f5ff10107092e95b7a1d
 - name: github.com/pkg/errors
   version: 645ef00459ed84a119197bfb8d8205042c6df63d
 - name: github.com/pkg/sftp
-  version: 7aa3e486569d7333a1fbed548e18493bfbe06d55
+  version: 8f9da7f630446dd8f3d363329be58c938b0a1eb1
 - name: github.com/prometheus/client_golang
   version: a5060f1eaab721946b185b2de468ff83ea5b89cb
   subpackages:
@@ -185,7 +185,7 @@ imports:
 - name: github.com/spf13/cast
   version: ce135a4ebeee6cfe9a26c93ee0d37825f26113c7
 - name: github.com/spf13/cobra
-  version: 16c014f1a19d865b765b420e74508f80eb831ada
+  version: 7be4beda01ec05d0b93d80b3facd2b6f44080d94
   subpackages:
   - cobra/cmd
 - name: github.com/spf13/jwalterweatherman
@@ -211,7 +211,7 @@ imports:
 - name: go.uber.org/atomic
   version: 3b8db5e93c4c02efbc313e17b2e796b0914a01fb
 - name: go.uber.org/zap
-  version: 4e517d38b2138e59475d6468e7a6b626eecdaa66
+  version: 4257c7cf05477d92ec25c31cfd3d60e89575f18a
   subpackages:
   - buffer
   - internal/bufferpool
@@ -249,7 +249,7 @@ imports:
   - transform
   - unicode/norm
 - name: golang.org/x/tools
-  version: 381149a2d6e5d8f319ccf04bfefc71e03a78b868
+  version: ab34c5f581f90acc47c03ceeb38c51f3153833a2
   subpackages:
   - go/ast/astutil
 - name: gopkg.in/airbrake/gobrake.v2
@@ -258,6 +258,4 @@ imports:
   version: bfee1239d796830ca346767650cce5ba90d58c57
 - name: gopkg.in/yaml.v2
   version: a83829b6f1293c91addabc89d0571c246397bbf4
-testImports:
-- name: github.com/uber-go/zap
-  version: 4e517d38b2138e59475d6468e7a6b626eecdaa66
+testImports: []
