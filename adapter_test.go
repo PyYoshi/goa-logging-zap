@@ -2,9 +2,8 @@ package goazap_test
 
 import (
 	"bytes"
-	"strings"
-
 	"encoding/json"
+	"strings"
 
 	"github.com/PyYoshi/goa-logging-zap"
 	"github.com/goadesign/goa"
