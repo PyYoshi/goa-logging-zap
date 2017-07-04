@@ -8,6 +8,7 @@ cache:
   directories:
     - vendor
 install:
-  - make deps
+  - make install-tools
+  - make install-deps
 script:
   - make test
