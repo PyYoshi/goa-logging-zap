@@ -2,12 +2,6 @@
 
 
 [[projects]]
-  name = "github.com/PyYoshi/goa-logging-zap"
-  packages = ["."]
-  revision = "0ba7eb1dd46c6d51a59b2211f1dc4041715ef100"
-  version = "v0.2.0"
-
-[[projects]]
   branch = "master"
   name = "github.com/armon/go-metrics"
   packages = ["."]
@@ -100,6 +94,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "60c1501b66d36f77b48f1caf7ab64607cc02303a969ca80b4df4df0ae46429b7"
+  inputs-digest = "9134ef1c2aaf6cb06858e19eb8e2643ebbd53fd047db60a3b8a5a8aa35f684f3"
   solver-name = "gps-cdcl"
   solver-version = 1
