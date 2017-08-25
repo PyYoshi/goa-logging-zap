@@ -2,34 +2,52 @@
 
 
 [[projects]]
+  name = "github.com/PyYoshi/goa-logging-zap"
+  packages = ["."]
+  revision = "0ba7eb1dd46c6d51a59b2211f1dc4041715ef100"
+  version = "v0.2.0"
+
+[[projects]]
   branch = "master"
   name = "github.com/armon/go-metrics"
   packages = ["."]
-  revision = "f036747b9d0e8590f175a5d654a2194a7d9df4b5"
+  revision = "023a4bbe4bb9bfb23ee7e1afc8d0abad217641f3"
 
 [[projects]]
   name = "github.com/dimfeld/httptreemux"
   packages = ["."]
-  revision = "55bdaa3f4bf4cf91acd94701fa2044fb487c455b"
-  version = "v4.0.0"
+  revision = "90654bdd3dfc3cac55538aa620f2f4d855bbdb83"
+  version = "v4.0.1"
 
 [[projects]]
   name = "github.com/goadesign/goa"
   packages = [".","uuid"]
-  revision = "58f3177f36f2c50ee6119da92795e48bac6d6243"
-  version = "v1.2.0"
+  revision = "5646a430cdeb66983d5ace3384e0a667c185abc7"
+  version = "v1.3.0"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/hashicorp/go-immutable-radix"
+  packages = ["."]
+  revision = "8aac2701530899b64bdea735a1de8da899815220"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/hashicorp/golang-lru"
+  packages = ["simplelru"]
+  revision = "0a025b7e63adc15a622f29b0b2c4c3848243bbf6"
 
 [[projects]]
   name = "github.com/onsi/ginkgo"
   packages = [".","config","internal/codelocation","internal/containernode","internal/failer","internal/leafnodes","internal/remote","internal/spec","internal/spec_iterator","internal/specrunner","internal/suite","internal/testingtproxy","internal/writer","reporters","reporters/stenographer","reporters/stenographer/support/go-colorable","reporters/stenographer/support/go-isatty","types"]
-  revision = "77a8c1e5c40d6bb6c5eb4dd4bdce9763564f6298"
-  version = "v1.3.1"
+  revision = "9eda700730cba42af70d53180f9dcce9266bc2bc"
+  version = "v1.4.0"
 
 [[projects]]
   name = "github.com/onsi/gomega"
   packages = [".","format","internal/assertion","internal/asyncassertion","internal/oraclematcher","internal/testingtsupport","matchers","matchers/support/goraph/bipartitegraph","matchers/support/goraph/edge","matchers/support/goraph/node","matchers/support/goraph/util","types"]
-  revision = "334b8f472b3af5d541c5642701c1e29e2126f486"
-  version = "v1.1.0"
+  revision = "c893efa28eb45626cdaa76c9f653b62488858837"
+  version = "v1.2.0"
 
 [[projects]]
   name = "github.com/satori/go.uuid"
@@ -44,32 +62,44 @@
   version = "v1.2.0"
 
 [[projects]]
+  name = "go.uber.org/multierr"
+  packages = ["."]
+  revision = "3c4937480c32f4c13a875a1829af76c98ca3d40a"
+  version = "v1.1.0"
+
+[[projects]]
   name = "go.uber.org/zap"
-  packages = [".","buffer","internal/bufferpool","internal/color","internal/exit","internal/multierror","zapcore"]
-  revision = "9cabc84638b70e564c3dab2766efcb1ded2aac9f"
-  version = "v1.4.1"
+  packages = [".","buffer","internal/bufferpool","internal/color","internal/exit","zapcore"]
+  revision = "9d9d6135afe89b6fc4a05e9a8552526caba38048"
+  version = "v1.5.0"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/net"
-  packages = ["context"]
-  revision = "1f9224279e98554b6a6432d4dd998a739f8b2b7c"
+  packages = ["context","html","html/atom","html/charset"]
+  revision = "57efc9c3d9f91fb3277f8da1cff370539c4d3dc5"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/sys"
   packages = ["unix"]
-  revision = "94b76065f2d2081d0fef24a6e67c571f51a6408a"
+  revision = "07c182904dbd53199946ba614a412c61d3c548f5"
+
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/text"
+  packages = ["encoding","encoding/charmap","encoding/htmlindex","encoding/internal","encoding/internal/identifier","encoding/japanese","encoding/korean","encoding/simplifiedchinese","encoding/traditionalchinese","encoding/unicode","internal/gen","internal/tag","internal/utf8internal","language","runes","transform","unicode/cldr"]
+  revision = "863dea0c5012ac1222058781721697b285f31f5f"
 
 [[projects]]
   branch = "v2"
   name = "gopkg.in/yaml.v2"
   packages = ["."]
-  revision = "cd8b52f8269e0feb286dfeef29f8fe4d5b397e0b"
+  revision = "eb3733d160e74a9c7e442f435eb3bea458e1d19f"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "da31025bb68b1fa12325dc1d1df20814e0eb571f472a4731b8de85ffbef2e29d"
+  inputs-digest = "60c1501b66d36f77b48f1caf7ab64607cc02303a969ca80b4df4df0ae46429b7"
   solver-name = "gps-cdcl"
   solver-version = 1
